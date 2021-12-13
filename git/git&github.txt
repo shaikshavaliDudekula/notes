@@ -1,0 +1,65 @@
+git & github
+--------------
+1.-->git is local repositary
+2.-->github is remote repositary
+----------------------------
+step1: create new account in github
+		create a new repositry in github
+step2: download and install git(local repositary)
+
+GIT commands
+-------------------------
+1)$ git init
+Initialized empty Git repository in C:/Users/LENOVO/eclipse-workspace/inetbanking_v2/.git/
+"
+This command is used to start a new repository."
+2)$ git remote add origin "https://github.com/shaikshavaliDudekula/inetbanking_v2.git"
+
+3)$ git status
+
+4)$git add -A       (all files are added to staging area)
+ 
+before doing commit first time we need to execute these below commands
+-------------------------------------------------------------------
+5)$git config --global user.name "shaiksha"
+$git config --global user.email "shavali2009@gmail.com"
+
+6)$git commit -m "......"(in git)
+7)$git push -u origin master(send files from git to github)
+
+(git@github.com:shaikshavaliDudekula/inetbanking_v2.git)
+===============================================================================================================
+process of uploading local project to github
+-----------------------------------------------
+step1:  ->open GitBash.
+	->chane directory to your project location(eg: cd C:/Users/LENOVO/eclipse-workspace/inetbanking_v2)
+step2: ->use command
+		git init 
+		(creates empty repositary[.git hidden file in your pwd(present working directory)]
+step3: ->use command
+		git add -A
+		(add all the files to the given folder)
+step4: ->use command
+		git status
+		(view all the files which are going to be staged to the first commit.)
+step5: -> use command
+		git commit -m "message"
+		(git commit uses '-m' as a flag for a message to set the commits with the content where the full 		description is included, and a message is written in an imperative sentence up to 50 characters long and 		defining "what was changed", and "why was the change made".)
+step6:->use command
+   		git remote add origin 'github repositary url'
+		eg:git remote add origin "https://github.com/shaikshavaliDudekula/inetbanking_v2.git"
+step7:->use command
+	git push -u origin master
+		(is used to push localcontent to github)
+step8: enter github credentals
+
+
+git update-git-for-windows.
+
+token:
+
+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
+
+
+       
+		

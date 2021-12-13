@@ -1,0 +1,68 @@
+ 4)TestNG program using @before and @ after annotatios
+
+
+package webpagetest;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class TitleVerification {
+	public WebDriver driver;
+	@BeforeMethod
+	public void launchbrowser()
+	{
+		System.setProperty("webdriver.chrome.driver", "C:/drivers/chromedriver.exe");
+		driver=new ChromeDriver();
+		driver.manage().window().maximize();
+	}
+	
+	
+	@Test
+	public void gmaillogin()
+	{
+	driver.get("http://www.gmail.com");	
+	driver.findElement(By.xpath("//input[@id='identifierId']")).sendKeys("shavali2009");
+	driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
+	//String actual=driver.getTitle();
+Assert.assertEquals(driver.getTitle(), "Gmail");
+	
+	}
+	@Test
+	public void facebooklogin()
+	
+	{
+		driver.get("https://www.facebook.com/");
+		driver.findElement(By.xpath("//a[contains(text(),'English (UK)')]")).click();
+		driver.findElement(By.cssSelector("#email")).sendKeys("9618298100");
+		driver.findElement(By.cssSelector("#pass")).sendKeys("9618298100");
+		driver.findElement(By.tagName("button")).click();
+		Assert.assertEquals(driver.getTitle(),"Log in to Facebook");
+	
+	}
+	@AfterMethod
+	public void closebrowser()
+	{
+		driver.close();
+	}
+	
+}
+
+output:
+PASSED: facebooklogin
+PASSED: gmaillogin
+
+===============================================
+    Default test
+    Tests run: 2, Failures: 0, Skips: 0
+===============================================
+
+
+===============================================
+Default suite
+Total tests run: 2, Passes: 2, Failures: 0, Skips: 0
+===============================================
